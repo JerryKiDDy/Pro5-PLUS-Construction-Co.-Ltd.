@@ -1,0 +1,220 @@
+:root {
+    --basecolor: #ffffff;
+    --textcolor: #000000;
+    --primarycolor: #ffc06e;
+    --secondarycolor: #8d8dff;
+    --color1: #f9f6f3;
+    --color2: #f3f7f9;
+    --color3: #f6f3f9;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Stylmes */
+html {
+    font-family: 'Poppins', sans-serif;
+    color: var(--textcolor);
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--basecolor);
+    color: var(--textcolor);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 15px 25px;
+    position: relative;
+    background-color: var(--basecolor);
+    z-index: 1000;
+}
+
+/* Company Logo and Name */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.logo-container img {
+    width: auto;
+    height: 60px;
+    object-fit: contain;
+}
+
+.logo-container h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap:25px;
+    flex-shrink: 0;
+}
+
+.nav-links a {
+    color: var(--textcolor);
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 22px;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+/* Shared navigation hover/focus effect for every page */
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: #ff8a0e;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+
+
+
+/* Hide Checkbox and Menu Icon on Desktop */
+#menu {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Tablet and Mobile */
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .logo-container {
+        flex: 1 1 0;
+    }
+
+    .logo-container h1 {
+        font-size: 22px;
+    }
+
+    .menu-icon {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    /* Mobile Dropdown Menu */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 15px;
+        width: 200px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 0;
+        background-color: var(--basecolor);
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 1001;
+    }
+
+    /* Show the dropdown when the hamburger checkbox is checked.
+       This also works on pages that do not load script.js. */
+    #menu:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 12px 18px;
+    }
+
+    
+
+    .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+}
+
+/* Small Mobile Screens */
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 12px 15px;
+        gap: 10px;
+    }
+
+    .logo-container {
+        gap: 8px;
+    }
+
+    .logo-container img {
+        height: 40px;
+    }
+
+    .logo-container h1 {
+        font-size: 16px;
+    }
+
+    .menu-icon {
+        font-size: 27px;
+    }
+
+    .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+        width: 160px;
+        right: 10px;
+    }
+
+    .nav-links a {
+        padding: 7px 12px;
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    
+}
